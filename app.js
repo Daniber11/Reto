@@ -244,16 +244,6 @@ const startTest = (_) => {
   document.querySelector(".btnHistory").style.display = "none";
   user = document.querySelector("#nombre_id").value;
 };
-// Funcion para imprimir el Historial
-const printHistory = () => {
-  document.querySelector(".btnStart").style.display = "none";
-  const history = JSON.parse(localStorage.getItem("Reto"));
-  let historic = history.map(function (data) {
-    return "<li>" + data.user + " " + data.jackpot + " " + data.level + "</li>";
-  });
-  let printHistoric = historic.join(" ");
-  document.querySelector("div").innerHTML = printHistoric;
-};
 
 // Almacenamiento de informacion
 const gameHistory = (user, jackpot, level) => {
@@ -272,4 +262,14 @@ const gameHistory = (user, jackpot, level) => {
     localStorage.setItem("Reto", JSON.stringify(matrizHistory));
   }
 };
-//
+
+// Funcion para imprimir el Historial
+const printHistory = () => {
+  document.querySelector(".btnStart").style.display = "none";
+  const history = JSON.parse(localStorage.getItem("Reto"));
+  let historic = history.map(function (data) {
+    return "<li>" + data.user + " " + data.jackpot + " " + data.level + "</li>";
+  });
+  let printHistoric = historic.join(" ");
+  document.querySelector("div").innerHTML = printHistoric;
+};
