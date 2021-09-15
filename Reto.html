@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Reto</title>
+    <style>
+      .rigth {
+        background: palegreen;
+      }
+      .wrong {
+        background: salmon;
+      }
+      .questionnaire {
+        display: none;
+      }
+      .user{
+        display: block;
+      }
+      .btnHistory{
+        display: block;
+      }            
+    </style>
+  </head>
+  
+  <body>
+    
+    <header>
+      <h1><b>Juego de Preguntas y Respuestas</b></h1>
+      <h2><i>Reta tu propio conociemento</i></h2><hr>
+    </header>
+
+    <div class="user">
+      <label for="nombre_id"><h3>¿Cual es tu nombre?</h3></label>
+      <input type="text" name="nombre" id="nombre_id" />
+    </div>
+    <br />
+    
+    <button class="btnStart" onclick="startTest()">Iniciar Juego</button>
+    
+    <button class="btnHistory" onclick="printHistory()">Mostrar Historial</button>
+    <div id="historycongtainer"></div>
+    
+
+    <div class="questionnaire">
+      <u><p>Tiempo: <span class="time">10</span></p>
+      </u>
+      <h4><i><div class="question"></div></i></h4>
+
+      <button onclick="printQuestion(Math.floor(Math.random() * questionnaire.length))">Siguiente Pregunta</button>
+
+      <button class="btnFinish" onclick="finishTest()">Retirarse</button> 
+
+      <p><h3>Tu acumulado es: <span class="rigthCounter">0</span></p></h3>
+
+      
+    </div>
+    <script src='./app.js'></script>  
+  </body>
+</html>
